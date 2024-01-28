@@ -1,0 +1,8 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: qmc5883
+Upstream-Contact: Max Reznik <reznikmm@gmail.com>
+Source: https://github.com/reznikmm/qmc5883
+
+Files: README.md alire.toml examples/qmc5883_put/README.md examples/qmc5883_lcd/README.md examples/qmc5883_lcd/qmc5883_lcd_x2.png
+Copyright: 2024 Max Reznik <reznikmm@gmail.com>
+License: Apache-2.0 WITH LLVM-exception
