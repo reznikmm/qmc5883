@@ -42,7 +42,7 @@ package QMC5883 is
       Mode        : Operating_Mode := Standby;
    end record;
 
-   type Magnetic_Field is delta 1.0 / 2.0 ** 17 range -8.0 .. 8.0;
+   type Magnetic_Field is delta 1.0 / 2.0 ** 14 range -8.0 .. 8.0;
    --  Magnetic flux density in Gauss
 
    type Magnetic_Field_Vector is record

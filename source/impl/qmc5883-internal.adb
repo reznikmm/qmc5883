@@ -100,6 +100,7 @@ package body QMC5883.Internal is
       Value      : out Magnetic_Field_Vector;
       Success    : out Boolean)
    is
+      Scale : constant := 2.0 ** 14 / 12_000.0;  --  Sensitivity 12000 LSB/G
       Raw   : Raw_Vector;
    begin
       Read_Raw_Measurement (Device, Raw, Success);
@@ -109,11 +110,16 @@ package body QMC5883.Internal is
          Y => Magnetic_Field'Small * Integer (Raw.Y),
          Z => Magnetic_Field'Small * Integer (Raw.Z));
 
-      if Full_Range = 8 then
+      if Full_Range = 2 then
          Value :=
-           (X => Value.X * 4,
-            Y => Value.Y * 4,
-            Z => Value.Z * 4);
+           (X => Value.X * Scale,
+            Y => Value.Y * Scale,
+            Z => Value.Z * Scale);
+      else
+         Value :=
+           (X => Value.X * 4 * Scale,
+            Y => Value.Y * 4 * Scale,
+            Z => Value.Z * 4 * Scale);
       end if;
    end Read_Measurement;
 

@@ -62,7 +62,7 @@ package GUI is
        Color  => HAL.Bitmap.Dark_Grey)];
 
    State : GUI_Buttons.Boolean_Array (Buttons'Range) :=
-     [+Fx | +Fy | +Fz | +O1 | +R1 => True, others => False];
+     [+Fx | +Fy | +Fz | +O1 | +G2 | +R1 => True, others => False];
 
    procedure Check_Touch
      (TP     : in out HAL.Touch_Panel.Touch_Panel_Device'Class;
