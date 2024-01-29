@@ -163,7 +163,11 @@ package body QMC5883.Internal is
      (Device  : Device_Context;
       Success : out Boolean) is
    begin
-      Write (Device, (16#0A# => 16#80#, 16#0B# => 16#01#), Success);
+      Write (Device, (16#0A# => 16#80#), Success);
+
+      if Success then
+         Write (Device, (16#0B# => 16#01#), Success);
+      end if;
    end Reset;
 
 end QMC5883.Internal;

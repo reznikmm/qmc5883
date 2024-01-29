@@ -77,6 +77,9 @@ package body GUI is
    -----------------
 
    procedure Dump_Screen (LCD : in out HAL.Bitmap.Bitmap_Buffer'Class) is
+      --  To convert text dump to raw binary format:
+      --  awk '{printf "%06x\n", $1}' img.txt  |xxd -r -p - img.data
+      --  Then open img.data in GIMP
       Color : HAL.UInt32;
    begin
       for Y in 0 .. LCD.Height - 1 loop

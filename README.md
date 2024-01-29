@@ -73,6 +73,16 @@ Settings include:
 
 - `Mode`: Switch between standby mode and continuous measurement mode.
 
+An example:
+```ada
+Sensor.Configure
+  ((Over_Sample => 512,
+    Data_Rate   => 50,
+    Full_Range  => 8,
+    Mode        => QMC5883.Continuous),
+   Ok);
+```
+
 ### Read Measurement
 
 The best way to determine data readiness is through interrupts using
