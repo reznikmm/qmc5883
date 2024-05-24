@@ -37,7 +37,7 @@ Generic instantiation looks like this:
 
 ```ada
 declare
-   package QMC5883_I2C is new HCM5883.Sensor
+   package QMC5883_I2C is new QMC5883.Sensor
      (I2C_Port => STM32.Device.I2C_1'Access);
 
 begin
